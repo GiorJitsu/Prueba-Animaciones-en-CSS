@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'header'
+    'filter'
+    'main'
+    'main'
+    'main'
+    'footer';
+}
+
+header {
+    background-color: black;
+    grid-area: header;
+    height: 15vh;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 250px;
+}
+
+.menuItem {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    z-index: 1050;
+}
+
+.menuItem ul li a {
+    transition: transform 0.2s;
+}
+
+.menuItem ul li a:hover {
+  transform: scale(1.2); 
+  color: #a80101 !important;
+  font-weight: 700;
+}
+
+.filter {
+    grid-area: filter;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botonFiltro {
+    width: 300px;
+    background-color: rgb(223, 223, 223) !important;
+    color: rgb(99, 99, 99) !important;
+    border: solid 1px #b6b6b6 !important;
+}
+
+.menuFiltro {
+    width: 300px;
+    text-align: center;  
+}
+
+main {
+    grid-area: main;
+    height: 60vh;
+    display: flex;
+    overflow: scroll;
+}
+
+.mainContent {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15% 10%;
+    justify-content: center;
+}
+
+.imagen-hover {
+  transform: scale(1);
+  transition: filter 0.4s ease, transform 0.4s ease;
+  filter: grayscale(50%);
+}
+
+.imagen-hover:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.card {
+    border: none !important;
+}
+
+.tituloProducto {
+    font-family: "Roboto", sans-serif;
+}
+
+.botonInfo {
+    border-radius: 50px !important;
+    font-family: "Roboto", sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.botonInfo:hover {
+      background-color: #a80101 !important; 
+      color: #fff;
+    }
+
+.textoProducto {}
+
+ 
+footer {
+    background-color: rgb(42, 42, 42);
+    grid-area: footer;
+    height: 15vh;
+    display: flex;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'rrss'
+    'logofoot'
+    'copyright';
+}
+
+.logoFooter {
+    grid-area: logofoot;
+    display: flex;
+    justify-content: center;
+}
+
+.logoFooter img {
+    width: 190px;
+}
+
+.copyright {
+    grid-area: copyright;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    color: rgb(177, 177, 177);
+    font-size: 0.7rem;
+    align-items: center;
+}
+
+.redesSociales {
+    grid-area: rrss;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+@media (min-width: 576px) {
+    * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 2fr 6fr;
+    grid-template-areas: 
+    'header filter filter'
+    'header main main'
+    'header main main'
+    'header main main'
+    'footer footer footer';
+}
+
+header {
+    background-color: black;
+    grid-area: header;
+    height: 90vh;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    animation: bounceZoom 1s ease-out;
+    transition: transform 1s;
+}
+
+.logo img {
+    width: 400px;
+}
+
+@keyframes bounceZoom {
+      0%   { transform: scale(0); opacity: 0; }
+      60%  { transform: scale(1.2); opacity: 1; }
+      80%  { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+.logo:hover {
+    transform: rotate(3deg) scale(0.9); 
+}
+
+.menuItem {
+    width: 250px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.menuItem ul li a {
+    transition: transform 0.2s;
+}
+
+.menuItem ul li a:hover {
+  transform: scale(1.2); 
+  color: #a80101 !important;
+  font-weight: 700;
+}
+
+.filter {
+    grid-area: filter;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.botonFiltro {
+    width: 300px;
+    background-color: rgb(223, 223, 223) !important;
+    color: rgb(99, 99, 99) !important;
+    border: solid 1px #b6b6b6 !important;
+    margin-right: 40px;
+}
+
+.menuFiltro {
+    width: 300px;
+    text-align: center;  
+}
+
+main {
+    grid-area: main;
+    height: 85vh;
+    display: flex;
+    overflow: scroll;
+}
+
+.mainContent {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.imagen-hover {
+  transform: scale(1);
+  transition: filter 0.4s ease, transform 0.4s ease;
+  filter: grayscale(50%);
+}
+
+.imagen-hover:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+footer {
+    background-color: rgb(42, 42, 42);
+    grid-area: footer;
+    height: 10vh;
+    display: flex;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    'logofoot copyright copyright rrss';
+}
+
+.logoFooter {
+    grid-area: logofoot;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.logoFooter img {
+    width: 200px;
+    height: 60px;
+}
+
+.copyright {
+    grid-area: copyright;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    color: rgb(177, 177, 177);
+    font-size: 1rem;
+    align-items: center;
+}
+
+.redesSociales {
+    grid-area: rrss;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+}
